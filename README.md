@@ -36,11 +36,14 @@ L’implémentation utilise le langage Scala, choisi pour sa capacité à faire 
 
 ## Utilisation
 
+- Concernant les arguments, il n'est pas nécessaire de rajouter le 0 à la liste des maisons, il est inclue de base dans l'algorithme
+- Le format des nombres accepté : 1 1.0 1.1
+
 ### Via IntelliJ 
 - Importez le projet SBT, puis lancez le programme depuis la classe Main
 
 ### Via SBT 
-- sbt run 1 2 3 4 
+- `sbt run 1 2 3 4`
 
 ### Via le fichier compilé 
 
@@ -48,4 +51,4 @@ L’implémentation utilise le langage Scala, choisi pour sa capacité à faire 
 
 ## Compilation
 
-- sbt compile packageBin
+- `sbt compile packageBin`
