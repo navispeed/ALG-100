@@ -33,4 +33,19 @@ Enfin, plutôt que de visiter les _quartiers_ dans l&#39;ordre d&#39;écart type
 ## Implémentation
 
 L’implémentation utilise le langage Scala, choisi pour sa capacité à faire de la programmation fonctionnelle : Utilisation des tuples, de la récursion finale et possibilité d’utiliser des monades et des accumulateurs.
-# ALG-100
+
+## Utilisation
+
+### Via IntelliJ 
+- Importez le projet SBT, puis lancez le programme depuis la classe Main
+
+### Via SBT 
+- sbt run 1 2 3 4 
+
+### Via le fichier compilé 
+
+- java -jar ProjetFinalAlgo.jar 1 2 3 -10 2.3 
+
+## Compilation
+
+- sbt compile packageBin

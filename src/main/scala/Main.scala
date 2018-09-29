@@ -161,6 +161,7 @@ object Main {
 
   /**
     * Point d'entrée de l'application, les maisons sont récupérés depuis la liste d'argument
+    * Le 0 est ajouté à la liste, il n'est pas nécessaire de le rajouter.
     * @param args
     */
   def main(args: Array[String]): Unit = {
