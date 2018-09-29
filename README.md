@@ -52,3 +52,12 @@ L’implémentation utilise le langage Scala, choisi pour sa capacité à faire 
 ## Compilation
 
 - `sbt compile packageBin`
+
+## Exemple
+
+```bash
+java -jar ProjetFinalAlgo.jar -10 2.2 3.2 4.2
+# 0.0,4.2,3.2,2.2,-10.0
+java -jar ProjetFinalAlgo.jar 2 3 4 -10
+# 0.0,4.0,3.0,2.0,-10.0
+```
