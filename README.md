@@ -53,11 +53,44 @@ L’implémentation utilise le langage Scala, choisi pour sa capacité à faire 
 
 - `sbt compile packageBin`
 
-## Exemple
-
+## Exemple d'utilisation
 ```bash
 java -jar ProjetFinalAlgo.jar -10 2.2 3.2 4.2
 # 0.0,4.2,3.2,2.2,-10.0
 java -jar ProjetFinalAlgo.jar 2 3 4 -10
 # 0.0,4.0,3.0,2.0,-10.0
 ```
+
+## Fonctionnement
+
+Liste de maison -112,-89,-45,-40,-25,-24.5,-24,-23,-15,8,15,18,120,121,122,125
+Avec TAILLE_QUARTIER_MAXIMUM=4
+
+On divise la liste d'entrée en sous listes de 4 éléments chacunes, puis on calcul l'écart type de chacune.
+
+|#|Liste| Ecart Type |
+|---|---| --- |
+|1|-112,-89,-45,-40 | 30.17035 |
+|2|-25,-24.5,-24,-23 | 0.73951 |
+|3|-15,-8,15,18 | 16,46207763 |
+|4|120,121,122,125 | 2,160246899 |
+
+Une fois fait, on trie les listes par écart type croissant
+
+|#|Liste| Ecart Type |
+|---|---| --- |
+|2|-25,-24.5,-24,-23 | 0.73951 |
+|4|120,121,122,125 | 2,160246899 |
+|3|-15,-8,15,18 | 16,46207763 |
+|1|-112,-89,-45,-40 | 30.17035 |
+
+On a un premier chemin qui se dessine, qui serait 2-4-3-1
+Mais, pour aller de 2 à 4, il y a 3 sur la routes, il devient intéressant d'ajouter la liste au chemin final.
+
+On obtient alors à la fin le chemin 2-3-4-1. Enfin, pour minimiser le temps d'attente au sein d'un quartier, on appelle la fonction bruteforce de la manière suivante :
+
+```scala 
+  bruteforce((dernierNoeudVisité :: listeAVisiter).permutations)
+```
+
+Ainsi, on obtient la meilleure permutation à ajouter dans le chemin final.
